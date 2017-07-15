@@ -1,0 +1,22 @@
+﻿@model Bicicleta
+@{
+    ViewBag.Title = "DetaliiBicicleta";
+}
+<div class="important">
+
+    <p>
+        <h2>Detalii Bicicleta</h2> <br />
+        <div class="textedit">
+            Categorie: @Model.Categorie ;<br />
+            Model: @Model.Model ;<br />
+            Pret/h: @Model.Pret_h <span>lei</span>;<br />
+            Detalii: @Model.Detalii ;<br />
+
+            <br />
+
+            <img src="@Model.ImageLink" alt="Url_image" style="width:150px;height:100px;">
+        </div>
+    </p>
+
+
+</div>

@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html>
+
+    @Styles.Render("~/Content/css")
+<head>
+
+
+    <div class="header">
+
+
+        <div class="denumire">
+            Alex's
+        </div>
+
+        <div class="logo">
+            <a href="/Home/Index">
+                <img src="~/Content/Images/logo.jpg" alt="Banner" style="width:190px;height:111px;">
+            </a>
+        </div>
+
+        <div class="meniu">
+
+
+            <div class="cont">
+                @if (Session["IdClient"] != null)
+                {
+                    <div class="cont1">
+                        @Session["User"].ToString()
+                    </div>
+
+                    <div class="cont1">
+                        <p>|</p>
+                    </div>
+
+                    <div class="cont1">
+                        @Html.ActionLink("Log out", "LogOff", "Cont")
+                    </div>
+                }
+                else
+                {
+                    <div class="cont1">
+                        @Html.ActionLink("Login", "Login", "Cont")
+                    </div>
+                }
+            </div>
+
+            <div class="meniu2">
+
+            <ul>
+
+                <li><a href="/Home/Index">Acasa</a></li>
+                <li><a href="/Bicicleta/ListaBiciclete2">Biciclete</a></li>
+                <li><a href="/Centru/ListaCentre2">Centre-inchirieri</a></li>
+                <li><a href="/Cont/Index">Contul meu</a></li>
+                @if (User.Identity.IsAuthenticated != false && User.Identity.Name == "admin" && Session["IdClient"]!= null)
+                {
+                <li><a href="/Admin/AdminPage">Administrare</a></li>
+
+                }
+
+            </ul>
+            </div>
+        </div>
+    </div>
+</head>
+
+<body>
+    <div class="mybody">
+
+    <div class="container body-content">
+        @RenderBody()
+
+
+        </div>
+    </div>
+
+        <footer>
+            <hr />
+
+            <div class="myfooter">
+
+            <div class="footerimages">
+
+                <div class="fb">
+                    <img src="~/Content/Images/logopowered.png" alt="Banner" style="width:190px;">
+                </div>
+
+                <div class="fb">
+                    <a href="https://www.facebook.com">
+                        <img src="~/Content/Images/fb.png" style="width:30px;height:30px;">
+                    </a>
+                </div>
+                
+                <div class="fb">
+                    <a href="https://www.instagram.com/?hl=en">
+                        <img src="~/Content/Images/insta.png" style="width:30px;height:30px;">
+                    </a>
+                </div>
+
+                <div class="fb">
+                    <a href="https://about.twitter.com/company/brand-assets">
+                        <img src="~/Content/Images/twit.png" style="width:30px;height:30px;">
+                    </a>
+                </div>
+                    </div>
+
+
+            <div class="textfooter">
+                Intrarea Valului nr. 2, sector 1, București
+                Call Center și Service Alex's Urban: 021 327 57 78
+                ivelo@greenrevolution.ro
+                36/25.03.2009 CUI 25368700
+            </div>
+
+    </div>
+
+        </footer>
+ 
+
+
+</body>
+</html>

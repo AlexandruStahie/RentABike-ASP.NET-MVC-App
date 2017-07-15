@@ -1,0 +1,21 @@
+﻿@using BD_Project.Models;
+@model List<Interogare2cs>
+@{
+    ViewBag.Title = "Interogare2";
+}
+<h2> Top 2 biciclete care apar cele mai des in comenzi</h2>
+
+@foreach (var x in Model)
+{
+    <p>
+        <div class="textedit">
+
+            Model:  @x.bicicleta.Model ;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Categorie:  @x.bicicleta.Categorie ;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Nr_aparitii:  @x.count ;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <br />
+        </div>
+    </p>
+
+}

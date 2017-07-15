@@ -1,0 +1,44 @@
+﻿@using BD_Project.Models;
+@model Comenzi_Final
+@{
+    ViewBag.Title = "DetaliiComanda";
+}
+<div class="important">
+
+    <p>
+        <h2>Detalii Comanda</h2> <br />
+        <div class="textedit">
+            Tip Plata @Model.comanda.Tip_Plata ;<br />
+            Timp Start: @Model.comanda.TimpStart ;<br />
+            Timp Stop: @Model.comanda.TimpStop ;<br />
+            Pret: @Model.comanda.Pret <span>lei</span>;<br />
+            <br /><br />
+        </div>
+
+        <h2>Detalii Centru</h2> <br />
+        <div class="textedit">
+            Nume: @Model.centru.Nume; <br />
+            Nr telefon: @Model.centru.Nr_telefon; <br />
+            Program: @Model.centru.Program; <br />
+            <br /><br />
+        </div>
+
+        <h2>Biciclete comandate</h2> <br />
+        <div class="textedit">
+            @for (int i = 0; i < Model.biciclete.Count; i++)
+            {
+                var nr = i + 1;
+                <p>Bicicleta @nr</p>
+                    <span>Categorie :</span> @Model.biciclete[i].Categorie; <br />
+                    <span>Model :</span> @Model.biciclete[i].Model; <br />
+                    <span>Pret_h :</span> @Model.biciclete[i].Pret_h; <br />
+                    <span>Detalii :</span> @Model.biciclete[i].Detalii; <br />
+               <br /><br />
+            }
+
+        </div>
+
+    </p>
+
+
+</div>

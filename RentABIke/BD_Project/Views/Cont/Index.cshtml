@@ -1,0 +1,49 @@
+﻿@model IEnumerable<BD_Project.Client>
+
+@{
+    ViewBag.Title = "Contul meu";
+}
+@if (Session["IdClient"] == null)
+{
+       <div class="mesajlogare">
+           <h2>Nu sunteti logat in cont !</h2>
+       </div>
+       <div class="login">
+           <p>Va puteti loga aici: </p>
+               @Html.ActionLink("Login", "Login", "Cont", new { }, null)
+       </div>
+       <br />
+    <div class="creare">
+        <p>Nu aveti cont? Va puteti crea contul aici </p>
+        @Html.ActionLink("Creare cont", "CreareCont", "ClientXAdress")
+    </div>
+
+}
+else
+{
+    <div class="infocont">
+        <h1>Despre cont </h1><br />
+        <br />
+
+        <div class="desprecont">
+            <a href="/Cont/EditareCont/@Session["IdClient"]">Editare cont</a><br />
+        </div>
+
+        <div class="desprecont">
+            <a href="/Cont/DetaliiUser/@Session["IdClient"]">Vizualizare detalii cont</a><br />
+        </div>
+
+        <div class="desprecont">
+            <a href="/Comenzi/AdaugaComanda">Creare Comanda</a><br />
+        </div>
+
+        <div class="desprecont">
+            <a href="/Comenzi/ListaComenziActive">Lista Comenzi Active (TimpStop > Today)</a><br />
+        </div>
+
+        <div class="desprecont">
+            <a href="/Comenzi/ListaComenziExpirate">Lista Comenzi Expirate (TimpStop < Today)</a><br />
+        </div>
+
+    </div>
+}

@@ -1,0 +1,23 @@
+﻿@using BD_Project.Models;
+@model List<Bicicleta>
+@{
+    ViewBag.Title = "Interogare1";
+}
+<h2> Bicicletele care nu au fost comandate niciodata</h2>
+
+@foreach (var x in Model)
+{
+    <p>
+        <div class="textedit">
+
+            IdBicicleta:  @x.IdBicicleta ;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Model:  @x.Model ;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Categorie:  @x.Categorie ;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Pret_h:  @x.Pret_h ;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+
+            <br />
+        </div>
+    </p>
+
+}

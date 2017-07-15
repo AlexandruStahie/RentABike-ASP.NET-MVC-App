@@ -1,0 +1,44 @@
+﻿@using BD_Project.Models;
+@model List<Interogare1>
+@{
+    ViewBag.Title = "Interogare1";
+}
+<h2> Top x clienti cu comenzile cele mai scumpe</h2>
+
+
+@using (Html.BeginForm("InterogareUnu", "ComplexQueryWithParam"))
+    {
+
+        @Html.LabelFor(model => model[0].count, "Alegeti x: ")
+        <div class="spatiu">
+            @Html.EditorFor(model => model[0].count)
+        </div>
+        @Html.ValidationMessageFor(model => model[0].count)
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+
+}
+
+<br />
+@foreach (var x in Model)
+{
+    if (x.client != null && x.comanda != null)
+    {
+        <p>
+            <div class="textedit">
+
+                Nume: @x.client.Nume &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Prenume: @x.client.Prenume &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Pret: @x.comanda.Pret
+
+                <br />
+            </div>
+        </p>
+
+    }
+
+}

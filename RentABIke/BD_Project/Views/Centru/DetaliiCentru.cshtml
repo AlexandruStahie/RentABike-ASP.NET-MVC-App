@@ -1,0 +1,27 @@
+﻿@model Centru
+@{
+    ViewBag.Title = "DetaliiCentru";
+}
+<div class="important">
+
+    <p>
+        <h2>Detalii Centru</h2> <br />
+        <div class="textedit">
+            Nume: @Model.Nume ;<br />
+            Nr_telefon: @Model.Nr_telefon ;<br />
+            Program: @Model.Program ;<br />
+            <br /><br />
+        </div>
+
+        <h2>Detalii Adresa</h2> <br />
+        <div class="textedit">
+            Judet: @Model.Adresa.Judet; <br />
+            Oras: @Model.Adresa.Oras; <br />
+            Strada: @Model.Adresa.Strada; <br />
+            Nr: @Model.Adresa.Nr; <br />
+
+        </div>
+    </p>
+
+
+</div>

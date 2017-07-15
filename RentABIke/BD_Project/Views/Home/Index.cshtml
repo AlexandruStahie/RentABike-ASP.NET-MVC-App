@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<p>
+    <div class="descriere">
+        &nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;"Mersul pe bicicletă a devenit aproape un simbol al civilizaţiei urbane europene din secolul XXI. În marile oraşe din Europa, oamenii au înţeles că lupta cu aglomeraţia din trafic nu poate fi câştigată la volanul automobilului. De aceea, apelează într-un număr cât mai mare la acest mijloc de transport sănătos, curat şi, de ce nu, eficient. Scopul nostru, al Primăriei Sectorului 1, este tocmai promovarea acestei soluţii europene la traficul din ce în ce mai sufocant din Bucureşti. Ne urcăm pe bicicletă şi pentru că vrem ca Bucureştiul să semene cu marile oraşe din Europa", spune primarul Sectorului 1, Andrei Chiliman.
+    </div>
+</p>
+
+<body onload="startTimer()">
+
+    <div class="swipe", style=" marign-left: 50px;">
+    <img id="img"         src="~/Content/Images/1.png" style="width:600px;height:450px;" />
+    <img id="img2" hidden src="~/Content/Images/2.png" style="width:600px;height:450px; " />
+    <img id="img3" hidden src="~/Content/Images/3.png" style="width:600px;height:600px; " />
+    <img id="img4" hidden src="~/Content/Images/4.png" style="width:600px;height:100px; " />
+    </div>
+
+    </body>
+
+    <script type="text/javascript">
+          function displayNextImage() {
+              x = (x === images.length - 1) ? 0 : x + 1;
+              document.getElementById("img").src = images[x];
+          }
+
+          function displayPreviousImage() {
+              x = (x <= 0) ? images.length - 1 : x - 1;
+              document.getElementById("img").src = images[x];
+          }
+
+          function startTimer() {
+              setInterval(displayNextImage, 3300);
+          }
+
+          var images = [], x = -1;
+          images[0] = document.getElementById("img").src;
+          images[1] = document.getElementById("img2").src;
+          images[2] = document.getElementById("img3").src;
+          images[3] = document.getElementById("img4").src;
+    </script>
+

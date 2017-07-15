@@ -1,0 +1,43 @@
+﻿@model Client
+@{
+    ViewBag.Title = "DetaliiUser";
+}
+<div class="important">
+
+    <p>
+        <h2>Detalii User</h2> <br />
+        <div class="textedit">
+            Nume: @Model.Nume ;<br />
+            Prenume: @Model.Prenume ;<br />
+            User: @Model.User ;<br />
+            Password: @Model.Password ;<br />
+            E_mail: @Model.E_mail; <br />
+            Nr_telefon: @Model.Nr_telefon; <br />
+            Data_nastere: @Model.Data_nastere; <br />
+            <br /><br />
+        </div>
+
+        <h2>Detalii Adresa</h2> <br />
+        <div class="textedit">
+            Judet: @Model.Adresa.Judet; <br />
+            Oras: @Model.Adresa.Oras; <br />
+            Strada: @Model.Adresa.Strada; <br />
+            Nr: @Model.Adresa.Nr; <br />
+            Bloc: @Model.Adresa.Bloc; <br />
+
+        </div>
+</p>
+
+
+</div>
+
+<br />
+<h2>Comenzi</h2>
+<div class="desprecont">
+    <a href="/Comenzi/ListaComenziActive/@Model.IdClient">Lista Comenzi Active (TimpStop > Today)</a><br />
+</div>
+<br />
+
+<div class="desprecont">
+    <a href="/Comenzi/ListaComenziExpirate/@Model.IdClient">Lista Comenzi Expirate (TimpStop < Today)</a><br />
+</div>

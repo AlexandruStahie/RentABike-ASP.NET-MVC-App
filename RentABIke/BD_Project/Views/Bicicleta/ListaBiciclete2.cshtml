@@ -1,0 +1,20 @@
+﻿@model List<Bicicleta>
+@{
+    ViewBag.Title = "ListaBiciclete";
+}
+<h2>Lista Biciclete</h2>
+
+@foreach (var x in Model)
+{
+    <p>
+        <div class="textedit">
+            <img src="@x.ImageLink" alt="Url_image" style="width:150px;height:100px;">
+            <a href="/Bicicleta/DetaliiBicicleta2/@x.IdBicicleta"> @x.Model </a>
+
+            <br /><br />
+     
+
+        </div>
+    </p>
+
+}

@@ -1,0 +1,44 @@
+﻿@using BD_Project.Models;
+@model List<IntergareCompelxa4>
+@{
+    ViewBag.Title = "Interogare2";
+}
+<h2> Comenzile care au biciclete cu pret_h > x</h2>
+
+
+@using (Html.BeginForm("InterogareDoi", "ComplexQueryWithParam"))
+{
+
+    @Html.LabelFor(model => model[0].pret, "Alegeti x: ")
+    <div class="spatiu">
+        @Html.EditorFor(model => model[0].pret)
+    </div>
+        @Html.ValidationMessageFor(model => model[0].pret)
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+
+}
+
+<br />
+@foreach (var x in Model)
+{
+    if ( x.coamnda != null)
+    {
+        <p>
+            <div class="textedit">
+
+                IdComanda: @x.coamnda.IdComenzi &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                DataStart: @x.coamnda.TimpStart &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                DataStop: @x.coamnda.TimpStop
+
+                <br />
+            </div>
+        </p>
+
+    }
+
+}

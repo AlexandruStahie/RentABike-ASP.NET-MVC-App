@@ -1,0 +1,19 @@
+﻿@using BD_Project.Models;
+@model List<Comenzi>
+@{
+    ViewBag.Title = "ListaCoemzniExpirate";
+}
+<h2>Lista Comenzi Expirate</h2>
+
+@foreach (var x in Model)
+{
+    <p>
+        <div class="textedit">
+
+            <a href="/Comenzi/DetaliiComanda/@x.IdComenzi"> @x.TimpStart  ->  @x.TimpStop </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="/Comenzi/StergeComanda/@x.IdComenzi">Sterge</a>
+
+        </div>
+    </p>
+
+}

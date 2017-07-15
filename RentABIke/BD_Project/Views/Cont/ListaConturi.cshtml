@@ -1,0 +1,20 @@
+﻿@model List<Client>
+@{
+    ViewBag.Title = "ListaConturi";
+}
+    <h2>Lista Conturi</h2>
+
+    @foreach (var x in Model)
+    {
+        <p>
+            <div class="textedit">
+
+                <a href="/Cont/DetaliiUser/@x.IdClient"> @x.Nume </a>
+                <a href="/Cont/EditareCont/@x.IdClient">Editare</a>
+                <a href="/Cont/StergeUser/@x.IdClient">Sterge</a>
+
+            </div>
+        </p>
+
+    }
+</div>

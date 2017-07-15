@@ -1,0 +1,21 @@
+﻿@using BD_Project.Models;
+@model List<Interogare1>
+@{
+    ViewBag.Title = "Interogare1";
+}
+<h2> Clientii care au comenzi de peste 90 lei</h2>
+
+@foreach (var x in Model)
+{
+    <p>
+        <div class="textedit">
+
+            Nume:  @x.client.Nume ;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Prenume:  @x.client.Prenume ;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Pret:  @x.comanda.Pret ;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           
+            <br />
+        </div>
+    </p>
+
+}

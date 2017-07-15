@@ -1,0 +1,100 @@
+﻿@model BD_Project.Models.ClinetxAdress
+
+@{
+ViewBag.Title = "CreareCont";
+}
+
+<h2>Creare Cont</h2>
+
+@using (Html.BeginForm()) 
+{
+@Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+
+        @Html.LabelFor(model => model.clientInfo.Nume)
+        <div class="spatiu">
+            @Html.EditorFor(model => model.clientInfo.Nume)
+        </div>
+        @Html.ValidationMessageFor(model => model.clientInfo.Nume)
+
+        @Html.LabelFor(model => model.clientInfo.Prenume)
+        <div class="spatiu">
+            @Html.EditorFor(model => model.clientInfo.Prenume)
+        </div>
+        @Html.ValidationMessageFor(model => model.clientInfo.Prenume)
+
+        @Html.LabelFor(model => model.clientInfo.User)
+        <div class="spatiu">
+            @Html.EditorFor(model => model.clientInfo.User)
+        </div>
+        @Html.ValidationMessageFor(model => model.clientInfo.User)
+
+        @Html.LabelFor(model => model.clientInfo.Password)
+        <div class="spatiu">
+            @Html.PasswordFor(model => model.clientInfo.Password)
+        </div>
+        @Html.ValidationMessageFor(model => model.clientInfo.Password)
+
+        @Html.LabelFor(model => model.clientInfo.E_mail)
+        <div class="spatiu">
+            @Html.EditorFor(model => model.clientInfo.E_mail)
+        </div>
+        @Html.ValidationMessageFor(model => model.clientInfo.E_mail)
+
+        @Html.LabelFor(model => model.clientInfo.Nr_telefon)
+        <div class="spatiu">
+            @Html.EditorFor(model => model.clientInfo.Nr_telefon)
+        </div>
+        @Html.ValidationMessageFor(model => model.clientInfo.Nr_telefon)
+
+        @Html.LabelFor(model => model.clientInfo.Data_nastere)
+        <div class="spatiu">
+            @Html.EditorFor(model => model.clientInfo.Data_nastere)
+        </div>
+        @Html.ValidationMessageFor(model => model.clientInfo.Data_nastere)
+
+        @Html.LabelFor(model => model.adressInfo.Judet)
+        <div class="spatiu">
+            @Html.EditorFor(model => model.adressInfo.Judet)
+        </div>
+        @Html.ValidationMessageFor(model => model.adressInfo.Judet)
+
+        @Html.LabelFor(model => model.adressInfo.Oras)
+        <div class="spatiu">
+            @Html.EditorFor(model => model.adressInfo.Oras)
+        </div>
+        @Html.ValidationMessageFor(model => model.adressInfo.Oras)
+
+        @Html.LabelFor(model => model.adressInfo.Strada)
+        <div class="spatiu">
+            @Html.EditorFor(model => model.adressInfo.Strada)
+        </div>
+        @Html.ValidationMessageFor(model => model.adressInfo.Strada)
+
+        @Html.LabelFor(model => model.adressInfo.Nr)
+        <div class="spatiu">
+            @Html.EditorFor(model => model.adressInfo.Nr)
+        </div>
+        @Html.ValidationMessageFor(model => model.adressInfo.Nr)
+
+        @Html.LabelFor(model => model.adressInfo.Bloc)
+        <div class="spatiu">
+            @Html.EditorFor(model => model.adressInfo.Bloc)
+        </div>
+
+        @Html.ValidationMessageFor(model => model.adressInfo.Bloc)
+
+        <br /><br />
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+@Html.ActionLink("Back to List", "Index")
+</div>

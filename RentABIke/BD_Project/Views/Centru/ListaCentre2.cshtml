@@ -1,0 +1,17 @@
+﻿@model List<Centru>
+@{
+    ViewBag.Title = "ListaCentre";
+}
+<h2>Lista Centre</h2>
+
+@foreach (var x in Model)
+{
+    <p>
+        <div class="textedit">
+
+            <a href="/Centru/DetaliiCentru/@x.IdCentru"> @x.Nume </a>
+
+        </div>
+    </p>
+
+}

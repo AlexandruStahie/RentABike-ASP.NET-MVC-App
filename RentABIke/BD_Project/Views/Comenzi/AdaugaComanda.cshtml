@@ -1,0 +1,115 @@
+﻿@using BD_Project.Models
+@model Comenzi_Final
+
+@{ 
+    ViewBag.Title = "CreareCoamanda";
+    var avaCentre = (SelectList)ViewBag.CentreDisponibile;
+}
+
+@using (Html.BeginForm("AdaugaComanda", "Comenzi"))
+{
+
+
+    @Html.LabelFor(model => model.comanda.Tip_Plata, "Tip plata (cash / card)")
+    <div class="spatiu">
+     @Html.EditorFor(model => model.comanda.Tip_Plata)
+    </div>
+    @Html.ValidationMessageFor(model => model.comanda.Tip_Plata)
+
+
+    @Html.LabelFor(model => model.comanda.TimpStart, "Data inceput inchiriere (yyyy-MM--dd hh:mm)")
+    <div class="spatiu">
+    @Html.EditorFor(model => model.comanda.TimpStart, new { @id = "datastart" })
+    </div>
+    @Html.ValidationMessageFor(model => model.comanda.TimpStart)
+
+
+    @Html.LabelFor(model => model.comanda.TimpStop, "Data sfarsit inchiriere (yyyy-MM--dd hh:mm)")
+    <div class="spatiu">
+    @Html.EditorFor(model => model.comanda.TimpStop, new { @id = "datastop" })
+    </div>
+    @Html.ValidationMessageFor(model => model.comanda.TimpStop)
+
+
+    @Html.LabelFor(model => model.IdCentru, "Alege Centru inchiriere")
+    <div class="spatiu">
+    @Html.DropDownListFor(model => model.IdCentru, avaCentre)
+    </div>
+    @Html.ValidationMessageFor(model => model.IdCentru)
+
+
+
+    <b>Selectati bicicletele pe care doriti sa le inchiriati</b>
+    <br />
+    <b>Model / Categorie / Pret/h</b>
+    <br /><br />
+    for (int i = 0; i < Model.biciclete.Count; i++)
+    {
+            @Html.CheckBoxFor(model => model.biciclete[i].IsEnabled, new { @id = "checkbox" , @class = Model.biciclete[i].Pret_h});
+            @Html.HiddenFor(model => model.biciclete[i].IdBicicleta)
+            @Html.DisplayFor(model => model.biciclete[i].Model); 
+        <span> / </span>
+            @Html.DisplayFor(model => model.biciclete[i].Categorie);
+        <span> / </span>
+            @Html.DisplayFor(model => model.biciclete[i].Pret_h);
+        <span>lei ;</span>
+            @Html.HiddenFor(model => model.biciclete[i].Pret_h, new { @id = "pret_h" })
+        
+        <br />
+    }
+
+        @Html.LabelFor(model=>model.comanda.Pret, "Pretul comenzii este: (lei)");
+        <div class="needit">
+            @Html.EditorFor(model => model.comanda.Pret, new { @id = "pret", @readonly = "readonly", @disabled = "disabled" })
+        </div>
+
+
+    <br /><br />
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+
+} 
+
+
+<script src="~/Scripts/jquery-3.1.1.min.js"></script>
+
+
+    <script>
+
+    $(function () { $('.needit :input').attr("disabled", true); });
+
+    var GetPretPlusURL= '@Url.Action("PretPlus", "Comenzi")';
+    var GetPretMinusURL= '@Url.Action("PretMinus", "Comenzi")';
+        var pretcurent = 0;
+
+    $(document).ready(function () {
+        $("input:checkbox").change(function () {
+
+            var datastart = $('#comanda_TimpStart').val();
+            var datastop = $('#comanda_TimpStop').val();
+            var pretcurent = $('#comanda_Pret').val();
+
+            if ($(this).is(":checked")) {
+                var pret_h = $('input:checkbox:checked').attr('class');
+
+                $.ajax({
+                    type: 'POST',
+                    url: GetPretPlusURL,
+                    data: { datastart: datastart, datastop: datastop, pretcurent: pretcurent, pret_h: pret_h },
+                    success: function (result) { $('#comanda_Pret').val(result.ceva) }
+                });
+            } else if (!$(this).is(":checked")) {
+                var pret_h = $(this).attr('class');
+                $.ajax({
+                    type: 'POST',
+                    url: GetPretMinusURL,
+                    data: { datastart: datastart, datastop: datastop, pretcurent: pretcurent, pret_h: pret_h },
+                    success: function (result) { $('#comanda_Pret').val(result.ceva) }
+                });
+            }
+        });
+    })
+</script>

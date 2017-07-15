@@ -1,0 +1,218 @@
+﻿
+
+.body-content {
+
+}
+
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+.header
+{
+    vertical-align:top;
+    background-color: #27B6BE;
+    width : 100%;
+    height : 20%;
+
+}
+
+.denumire
+{
+    width:15%;
+    text-align:right;
+    vertical-align:top;
+    margin-left:4%;
+    color : white;
+    font-weight: bold;
+    font-size:40px;
+    display:inline-block;
+    margin-top: 50px;
+}
+
+.logo
+{
+    display:inline-block;
+    width:20%;
+    vertical-align:top;
+}
+
+.meniu
+{
+     display:inline-block;
+     margin-top:5px; 
+     width: 48%;
+     height:110px;
+
+}
+
+li {
+    float: left;
+    overflow: hidden;
+    font-size:28px;
+    margin-left:2%;
+    color: white;
+}
+
+.cont
+{
+    font-size:11px;
+    height:1px;
+    float:right;
+    vertical-align:top;
+    display:block;
+    margin-right:20px;
+}
+
+.cont1 
+{
+     color:white;
+     display:inline-block;
+     font-size:15px;
+}
+
+cont1 a
+{
+      font-size:15px;
+}
+
+.meniu2
+{
+    margin-top:40px;
+    display:block;
+}
+
+.meniu a:nth-child(2)
+{
+      color : white;
+      font-size:20px; 
+}
+
+.meniu a
+{
+    text-decoration: none;   
+    color:white;
+
+}
+
+.meniu a:hover
+{
+    color: black;
+}
+
+.mybody
+{
+     max-width: 100%;
+     padding-top: 10px;
+     word-wrap: break-word;
+     padding-left:10.5%;
+     margin-right:12%;
+     max-height:100%;
+}
+
+footer hr
+{
+    border-width: 1px;
+    border-color: black;
+    padding-right:5px;
+    align-content: center;
+    width: 80%;
+}
+
+footer
+{
+    padding-bottom:50px;
+}
+
+.myfooter
+{
+     vertical-align:top;
+     max-width: 100%;
+     padding-top: 10px;
+     word-wrap: break-word;
+     padding-left:12%;
+     margin-right:10.5%;
+     max-height:100%;
+
+}
+
+.footerimages
+{
+   vertical-align:top;
+     width:45%;
+       display:inline-block;
+}
+
+.fb
+{
+     display:inline-block;
+     margin-left:5px;
+}
+
+.textfooter
+{
+    vertical-align:top;
+    width:45%;
+    display:inline-block;
+    margin-left:50px;
+}
+
+.swipe
+{
+    margin-left:150px;
+}
+.error
+{
+    font-size:20px;
+    color:red;
+    font-weight: bold;
+}
+
+.spatiu
+{
+    margin-left: 25px;
+    margin-bottom: 20px;
+}
+
+.textedit
+{
+    margin-top:20px;
+    margin-left:4%;
+    text-align:justify;
+    font-size:17px;
+}
+
+.desprecont a
+{
+    font-size:17px;
+}
+
+.bla
+{
+    margin-right:2%;
+    margin-left:5%;
+    margin-bottom:3%;
+    padding:1%;
+    width:20%;
+    display:inline-block;
+    border:hidden;
+    font-size:20px;
+    border-radius: 10px;
+    vertical-align:top;
+    height:100px;
+}
+
+.casute
+{
+    margin-top:30px;
+    width:100%;
+    vertical-align:top;
+    margin-left:0%;
+}

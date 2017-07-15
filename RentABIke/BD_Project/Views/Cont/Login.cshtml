@@ -1,0 +1,44 @@
+﻿@model BD_Project.Client
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+
+        @if (@Html.ValidationMessage("CustomError") != null)
+        {
+            <div class="error">
+                @Html.ValidationMessage("CustomError")
+            </div>
+        }
+        <br />
+
+        @Html.LabelFor(model => model.User)<br />
+        @Html.EditorFor(model => model.User)
+        @Html.ValidationMessageFor(model => model.User)
+        <br />
+        @Html.LabelFor(model => model.Password)<br />
+        @Html.PasswordFor(model => model.Password)
+        @Html.ValidationMessageFor(model => model.Password)
+
+        <br />
+        <br />
+
+        <input type="submit" value="Login" />
+        <br />
+        <br />
+    </div>
+}
+
+<div>
+    <input type="button" class="btn btn-info" value="Creare cont" onclick="location.href='@Url.Action("Creare", "Cont")'" />
+
+</div>
